@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Login-Firebase</string>
+    <string name="welcome_to">Welcome To</string>
+    <string name="app_name_main">app_name_main</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="not_registered_yet_register">Not Registered Yet? REGISTER HERE!</string>
+    <string name="login">Login</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="name">Name</string>
+    <string name="email_1">Email</string>
+    <string name="set_password">Set Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="emergency_contact_details">Emergency Contact Details</string>
+    <string name="emergency_contact_name">Emergency Contact Name</string>
+    <string name="emergency_contact_phone">Emergency Contact Phone</string>
+    <string name="emergency_contact_email">Emergency Contact Email</string>
+    <string name="register">Register</string>
+    <string name="already_registered_login">Already Registered? LOGIN!</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="welcome">WELCOME</string>
+    <string name="home_button">Home Button</string>
+</resources>
