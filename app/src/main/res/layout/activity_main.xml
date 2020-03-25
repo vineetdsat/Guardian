@@ -8,19 +8,13 @@
 
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center"
-        android:text="@string/welcome_to"
-        android:textColor="@color/colorPrimary"
-        android:textSize="40sp" />
+
 
     <ImageView
+        android:layout_marginTop="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/name_logo"
+        android:background="@drawable/logo_name_2"
         android:layout_gravity="center"
         android:layout_marginBottom="100dp"
         android:contentDescription="@string/app_name_main" />
