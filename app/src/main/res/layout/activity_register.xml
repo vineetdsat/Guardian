@@ -53,18 +53,21 @@
         android:layout_marginBottom="10dp"
         android:layout_marginRight="65dp"
         android:layout_marginLeft="10dp" />
+
     <EditText
         android:id="@+id/r_et_phone"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/phone_number"
         android:layout_marginStart="10dp"
-        android:inputType="phone"
-        android:importantForAutofill="no"
+        android:layout_marginLeft="10dp"
         android:layout_marginEnd="65dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginRight="65dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginBottom="10dp"
+        android:hint="@string/phone_number"
+        android:importantForAutofill="no"
+        android:inputType="phone"
+        android:numeric="integer" />
     <EditText
         android:id="@+id/r_et_dob"
         android:layout_width="match_parent"
@@ -141,8 +144,7 @@
         android:textColor="#000000"/>
 
     <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyle"
+        android:id="@+id/progressb_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="invisible" />
