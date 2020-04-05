@@ -1,20 +1,17 @@
 package com.example.guardian;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-
-
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -36,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         Password = findViewById(R.id.l_et_pass);
         Login = findViewById(R.id.l_bt_login);
         goto_reg = findViewById(R.id.l_tv);
-        progress = findViewById(R.id.progressBar);
+        progress = findViewById(R.id.progressb_login);
 
 
 
@@ -66,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else {
                             Toast.makeText(MainActivity.this, "Error Occurred !" + task.getException(), Toast.LENGTH_SHORT).show();
+                            progress.setVisibility(View.GONE);
                         }
                     }
                 });

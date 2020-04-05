@@ -42,9 +42,11 @@ public class Register extends AppCompatActivity {
         em_Phone = findViewById(R.id.r_et_em_phone);
         Register = findViewById(R.id.r_bt_reg);
         goto_login = findViewById(R.id.r_tv);
-        progressBar = findViewById(R.id.progressBar2);
+
 
         fAuth = FirebaseAuth.getInstance();
+        progressBar = findViewById(R.id.progressb_register);
+
         if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),Home.class));
             finish();

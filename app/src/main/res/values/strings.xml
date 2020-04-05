@@ -23,4 +23,6 @@
     <string name="welcome">WELCOME</string>
     <string name="home_button">Home Button</string>
     <string name="logout">Logout</string>
+    <string name="map_button">Map Button</string>
+    <string name="title_web">Some Use-full Websites</string>
 </resources>
