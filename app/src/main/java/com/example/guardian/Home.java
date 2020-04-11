@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class Home extends AppCompatActivity {
-    ImageView Maps, Web;
+    ImageView Maps, Web,SOS;
 
 
     @Override
@@ -17,8 +17,9 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Maps = findViewById(R.id.imageView2);
-        Web = findViewById(R.id.imageView4);
+        Maps = findViewById(R.id.home_iv_map);
+        Web = findViewById(R.id.home_iv_web);
+        SOS = findViewById(R.id.home_iv_sos);
 
 
 
@@ -26,6 +27,13 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, Web.class);
+                startActivity(intent);
+            }
+        });
+        SOS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, SOS.class);
                 startActivity(intent);
             }
         });

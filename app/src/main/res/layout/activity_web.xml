@@ -7,10 +7,17 @@
     android:orientation="vertical"
     android:background="@drawable/back_8"
     tools:context=".Web">
+    <ImageView
+        android:id="@+id/logo_top"
+        android:layout_width="417dp"
+        android:layout_height="58dp"
+        android:contentDescription="@string/top_img"
+        android:src="@drawable/logo_top"/>
 
     <TextView
         style="@android:style/Widget.TextView.PopupMenu"
         android:layout_width="wrap_content"
+        android:layout_marginTop="50dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/title_web"
