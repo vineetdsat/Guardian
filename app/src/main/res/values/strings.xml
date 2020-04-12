@@ -27,4 +27,5 @@
     <string name="title_web">Some Use-full Websites</string>
     <string name="top_img">top_img</string>
     <string name="send_emergency_message">Send Emergency Message</string>
+    <string name="msg">Hey!, i am in an Emergency, I need your HELP!!   This is my Location : www.google.com/maps/?q=</string>
 </resources>

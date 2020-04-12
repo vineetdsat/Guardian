@@ -3,6 +3,7 @@ package com.example.guardian;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -21,6 +23,8 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import java.util.Objects;
+
 public class SOS extends AppCompatActivity {
     ImageView logo_top;
     TextView name, email,phone;
@@ -30,6 +34,7 @@ public class SOS extends AppCompatActivity {
     String userId;
     TextView textMessage;
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,17 +51,27 @@ public class SOS extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
-        userId = fAuth.getCurrentUser().getUid();
+        userId = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
 
         DocumentReference documentReference = fStore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                assert documentSnapshot != null;
                 phone.setText(documentSnapshot.getString("Em_Phone"));
                 name.setText(documentSnapshot.getString("Em_Name"));
                 email.setText(documentSnapshot.getString("Em_Email"));
+                final GlobalClass globalVariable = (GlobalClass)getApplicationContext();
+                final double Latitude = globalVariable.getLat();
+                final double Longitude = globalVariable.getLng();
+
+                String Longi = Double.toString(Longitude);
+                String Lati = Double.toString(Latitude);
+                textMessage.setText(String.format("%s%s,%s", getString(R.string.msg), Lati, Longi));
             }
         });
+
+
         logo_top.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

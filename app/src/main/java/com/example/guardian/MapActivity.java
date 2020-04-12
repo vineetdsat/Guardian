@@ -16,10 +16,10 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.gms.maps.model.LatLng;
 
 
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -28,7 +28,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     private  static final int REQUEST_CODE = 101;
 
 
-    GoogleMap map;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,15 +52,27 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                     currentLocation = location;
                     Toast.makeText(getApplicationContext(),currentLocation.getLatitude()
                     +""+currentLocation.getLongitude(),Toast.LENGTH_SHORT).show();
+
+                    final GlobalClass globalVariable =(GlobalClass)getApplicationContext();
+                    globalVariable.setLat(currentLocation.getLatitude());
+
+                    globalVariable.setLng(currentLocation.getLongitude());
+
+
+
                     SupportMapFragment supportMapFragment = (SupportMapFragment)
                             getSupportFragmentManager().findFragmentById(R.id.map);
+                    assert supportMapFragment != null;
                     supportMapFragment.getMapAsync(MapActivity.this);
                 }
             }
         });
 
 
+
+
     }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         LatLng latLng = new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
@@ -72,12 +84,10 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
-            case REQUEST_CODE:
-                if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    fetchLastLocation();
-                }
-                break;
+        if (requestCode == REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                fetchLastLocation();
+            }
         }
     }
 }
