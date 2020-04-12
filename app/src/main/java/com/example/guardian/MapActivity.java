@@ -55,7 +55,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
                     final GlobalClass globalVariable =(GlobalClass)getApplicationContext();
                     globalVariable.setLat(currentLocation.getLatitude());
-
                     globalVariable.setLng(currentLocation.getLongitude());
 
 

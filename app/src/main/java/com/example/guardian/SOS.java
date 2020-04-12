@@ -26,6 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import java.util.Objects;
 
 public class SOS extends AppCompatActivity {
+
     ImageView logo_top;
     TextView name, email,phone;
     Button sos;
@@ -37,9 +38,10 @@ public class SOS extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sos);
-        ActivityCompat.requestPermissions(SOS.this, new String[]{Manifest.permission.SEND_SMS, Manifest.permission.READ_SMS}, PackageManager.PERMISSION_GRANTED);
+        ActivityCompat.requestPermissions(SOS.this, new String[]{Manifest.permission.SEND_SMS, Manifest.permission.READ_SMS,Manifest.permission.ACCESS_FINE_LOCATION}, PackageManager.PERMISSION_GRANTED);
 
         logo_top = findViewById(R.id.logo_top);
         name = findViewById(R.id.tv_disp_name);
