@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,146 +7,157 @@
     android:background="@drawable/back_8"
     tools:context=".Register">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/personal_details"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:textSize="40sp"
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
-    <EditText
-        android:id="@+id/r_et_name"
-        android:layout_marginTop="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:hint="@string/name"
-        android:inputType="text"
-        android:importantForAutofill="no"
-        android:layout_marginEnd="65dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginLeft="10dp" />
-    <EditText
-        android:id="@+id/r_et_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:hint="@string/email_1"
-        android:inputType="textEmailAddress"
-        android:importantForAutofill="no"
-        android:layout_marginEnd="65dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginLeft="10dp" />
-    <EditText
-        android:id="@+id/r_et_pass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/set_password"
-        android:layout_marginStart="10dp"
-        android:inputType="textPassword"
-        android:importantForAutofill="no"
-        android:layout_marginEnd="65dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginLeft="10dp" />
-
-    <EditText
-        android:id="@+id/r_et_phone"
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginEnd="65dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginBottom="10dp"
-        android:hint="@string/phone_number"
-        android:importantForAutofill="no"
-        android:inputType="phone"
-        android:numeric="integer" />
-    <EditText
-        android:id="@+id/r_et_dob"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/date_of_birth"
-        android:inputType="date"
-        android:importantForAutofill="no"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="65dp"
-        android:layout_marginBottom="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginLeft="10dp" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/emergency_contact_details"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
-    <EditText
-        android:id="@+id/r_et_em_name"
-        android:layout_marginTop="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/emergency_contact_name"
-        android:inputType="textEmailAddress"
-        android:importantForAutofill="no"
-        android:layout_marginEnd="65dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginLeft="10dp" />
-    <EditText
-        android:id="@+id/r_et_em_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/emergency_contact_phone"
-        android:inputType="phone"
-        android:importantForAutofill="no"
-        android:layout_marginEnd="65dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginLeft="10dp" />
-    <EditText
-        android:id="@+id/r_et_em_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/emergency_contact_email"
-        android:inputType="textEmailAddress"
-        android:importantForAutofill="no"
-        android:layout_marginEnd="65dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginLeft="10dp" />
-    <Button
-        android:id="@+id/r_bt_reg"
-        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"/>
-    <TextView
-        android:id="@+id/r_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/already_registered_login"
-        android:layout_gravity="center"
-        android:textColor="#000000"/>
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/personal_details"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
 
-    <ProgressBar
-        android:id="@+id/progressb_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible" />
+        <EditText
+            android:id="@+id/r_et_name"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginRight="65dp"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/name"
+            android:importantForAutofill="no"
+            android:inputType="text" />
+        <EditText
+            android:id="@+id/r_et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:hint="@string/email_1"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="65dp"
+            android:layout_marginLeft="10dp" />
+        <EditText
+            android:id="@+id/r_et_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/set_password"
+            android:layout_marginStart="10dp"
+            android:inputType="textPassword"
+            android:importantForAutofill="no"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="65dp"
+            android:layout_marginLeft="10dp" />
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/r_et_phone"
+            style="@style/Widget.AppCompat.AutoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginRight="65dp"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/phone_number"
+            android:importantForAutofill="no"
+            android:inputType="phone" />
+        <EditText
+            android:id="@+id/r_et_dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/date_of_birth"
+            android:inputType="date"
+            android:importantForAutofill="no"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="65dp"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emergency_contact_details"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+        <EditText
+            android:id="@+id/r_et_em_name"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/emergency_contact_name"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginRight="65dp"
+            android:layout_marginLeft="10dp" />
+        <EditText
+            android:id="@+id/r_et_em_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/emergency_contact_phone"
+            android:inputType="phone"
+            android:importantForAutofill="no"
+            android:layout_marginEnd="65dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="65dp"
+            android:layout_marginLeft="10dp" />
+        <EditText
+            android:id="@+id/r_et_em_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/emergency_contact_email"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no"
+            android:layout_marginEnd="65dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="65dp"
+            android:layout_marginLeft="10dp" />
+        <Button
+            android:id="@+id/r_bt_reg"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/r_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_registered_login"
+            android:layout_gravity="center"
+            android:textColor="#000000"/>
+
+        <ProgressBar
+            android:id="@+id/progressb_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+
+
+
+
+
+</ScrollView>
+
