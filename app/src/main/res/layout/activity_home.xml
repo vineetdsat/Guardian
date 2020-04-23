@@ -58,7 +58,6 @@
         android:layout_marginBottom="100dp"
         android:textColor="@color/colorPrimary"
         android:text="@string/logout"
-        android:onClick="Logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
