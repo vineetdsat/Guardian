@@ -29,7 +29,6 @@
     <string name="send_emergency_message">Send Emergency Message</string>
     <string name="msg">Hey!, i am in an Emergency, I need your HELP!!   This is my Location : www.google.com/maps/?q=</string>
     <string name="rupee">₹</string>
-    <string name="textview" />
     <string name="nearest_police_station">Nearest Police Station</string>
 
     <string name="news">NEWS</string>
@@ -39,9 +38,14 @@
     <string name="map">MAP</string>
     <string name="sos">SOS</string>
     <string name="auto">Harassed by Auto Drivers?</string>
-    <string name="covid19_helpline">Covid19 Helpline</string>
+    <string name="women_helpline">Women Helpline</string>
     <string name="traffic">Traffic Helpline</string>
     <string name="senior">Senior Citizens Helpline</string>
     <string name="tourist_bureau">Tourist Bureau</string>
     <string name="commissioner_s_office">Commissioner\'s Office</string>
+    <string name="todo">TODO</string>
+    <string name="url">url</string>
+    <string name="title">title</string>
+    <string name="headlines">Headlines</string>
+    <string name="lnk">Links</string>
 </resources>
