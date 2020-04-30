@@ -63,6 +63,7 @@ public class SOS extends AppCompatActivity {
                 phone.setText(documentSnapshot.getString("Em_Phone"));
                 name.setText(documentSnapshot.getString("Em_Name"));
                 email.setText(documentSnapshot.getString("Em_Email"));
+
                 final GlobalClass globalVariable = (GlobalClass)getApplicationContext();
                 final double Latitude = globalVariable.getLat();
                 final double Longitude = globalVariable.getLng();
