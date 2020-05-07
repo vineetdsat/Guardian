@@ -48,4 +48,6 @@
     <string name="title">title</string>
     <string name="headlines">Headlines</string>
     <string name="lnk">Links</string>
+    <string name="update_profile">Update Profle</string>
+    <string name="employee_code">em_name</string>
 </resources>

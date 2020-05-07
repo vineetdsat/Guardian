@@ -52,6 +52,13 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, Profile.class);
+                startActivity(intent);
+            }
+        });
 
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override

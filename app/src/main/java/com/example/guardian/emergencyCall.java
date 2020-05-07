@@ -6,22 +6,30 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 public class emergencyCall extends AppCompatActivity {
-
+    ImageView top_logo;
     CardView Senior, Women, Traffic, Auto, Commissioner, Tourist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency_call);
+        top_logo = findViewById(R.id.logo_top);
         Senior = findViewById(R.id.cardView_call_senior);
         Women = findViewById(R.id.cardView_call_women);
         Traffic = findViewById(R.id.cardView_call_traffic);
         Auto = findViewById(R.id.cardView_call_auto);
         Commissioner = findViewById(R.id.cardView_call_commissioner);
         Tourist = findViewById(R.id.cardView_call_tourist);
-
+        top_logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(emergencyCall.this, Home.class);
+                startActivity(intent);
+            }
+        });
         Senior.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
