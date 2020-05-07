@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Home extends AppCompatActivity {
     Button Logout;
-    CardView Map,Sos,News,Area,Call,Profile;
+    CardView Map,Sos,Area,Call,Profile;
 
 
     @Override
@@ -23,7 +23,6 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Map = findViewById(R.id.cardView_map);
         Sos = findViewById(R.id.cardView_sos);
-        News = findViewById(R.id.cardView_news);
         Area = findViewById(R.id.cardView_area);
         Call = findViewById(R.id.cardView_call);
         Profile = findViewById(R.id.cardView_profile);
@@ -53,13 +52,7 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        News.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, News.class);
-                startActivity(intent);
-            }
-        });
+
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
