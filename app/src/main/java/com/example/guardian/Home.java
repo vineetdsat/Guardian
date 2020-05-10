@@ -1,20 +1,37 @@
 package com.example.guardian;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
 
 public class Home extends AppCompatActivity {
+    ImageView top;
     Button Logout;
     CardView Map,Sos,Area,Call,Profile;
+
+    Location currentLocation;
+    FusedLocationProviderClient fusedLocationProviderClient;
+    private  static final int REQUEST_CODE = 101;
+
 
 
     @Override
@@ -27,8 +44,9 @@ public class Home extends AppCompatActivity {
         Call = findViewById(R.id.cardView_call);
         Profile = findViewById(R.id.cardView_profile);
         Logout = findViewById(R.id.bt_logout);
-
-
+        top = findViewById(R.id.logo_top);
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        fetchLastLocation();
 
 
         Sos.setOnClickListener(new View.OnClickListener() {
@@ -75,8 +93,35 @@ public class Home extends AppCompatActivity {
 
 
     }
+    private void fetchLastLocation() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,new String[]
+                    {Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_CODE);
+            return;
+        }
+        Task<Location> task=fusedLocationProviderClient.getLastLocation();
+        task.addOnSuccessListener(new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if(location!= null){
+                    currentLocation = location;
+                    Toast.makeText(getApplicationContext(),currentLocation.getLatitude()
+                            +""+currentLocation.getLongitude(),Toast.LENGTH_SHORT).show();
+
+                    final GlobalClass globalVariable =(GlobalClass)getApplicationContext();
+                    globalVariable.setLat(currentLocation.getLatitude());
+                    globalVariable.setLng(currentLocation.getLongitude());
+                }
+            }
+        });
+    }
+
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                fetchLastLocation();
+            }
+        }
+    }
 
 }
-
-
-
