@@ -27,7 +27,7 @@ import java.util.Objects;
 
 public class Profile extends AppCompatActivity {
     static final String TAG = "YOUR-TAG-NAME";
-    EditText Name,em_Name,Email,Phone,DOB,em_Email,em_Phone;
+    EditText Name,em_Name,Email,Phone,em_Email,em_Phone;
     Button Update;
     TextView Top;
     FirebaseFirestore fStore;
@@ -45,7 +45,7 @@ public class Profile extends AppCompatActivity {
         em_Phone = findViewById(R.id.update_em_phone);
         Email = findViewById(R.id.update_email);
         Phone = findViewById(R.id.update_phone);
-        DOB = findViewById(R.id.update_dob);
+
         Update = findViewById(R.id.bt_update);
         Top = findViewById(R.id.top_navig);
 
@@ -62,7 +62,6 @@ public class Profile extends AppCompatActivity {
                 em_Name.setText(documentSnapshot.getString("Em_Name"));
                 Phone.setText(documentSnapshot.getString("Phone"));
                 Email.setText(documentSnapshot.getString("Email"));
-                DOB.setText(documentSnapshot.getString("D.O.B"));
                 em_Email.setText(documentSnapshot.getString("Em_Email"));
                 em_Phone.setText(documentSnapshot.getString("Em_Phone"));
             }
@@ -77,7 +76,6 @@ public class Profile extends AppCompatActivity {
                 final String u_em_phone = em_Phone.getText().toString().trim();
                 final String name = Name.getText().toString().trim();
                 final String phone = Phone.getText().toString().trim();
-                final String dob = DOB.getText().toString().trim();
                 userID = fAuth.getCurrentUser().getUid();
                 DocumentReference documentReference = fStore.collection("users").document(userID);
 
@@ -86,7 +84,6 @@ public class Profile extends AppCompatActivity {
                 user.put("Name",name);
                 user.put("Email",email);
                 user.put("Phone",phone);
-                user.put("D.O.B",dob);
                 user.put("Em_Name",u_em_name);
                 user.put("Em_Email",u_em_email);
                 user.put("Em_Phone",u_em_phone);

@@ -34,15 +34,7 @@
         android:inputType="textEmailAddress"
         android:layout_marginStart="20dp"
         android:autofillHints="@string/email" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/update_dob"
-        android:layout_marginEnd="30dp"
-        android:inputType="text"
-        android:layout_marginStart="20dp"
-        android:autofillHints="@string/date_of_birth"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

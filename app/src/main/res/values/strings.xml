@@ -50,4 +50,6 @@
     <string name="lnk">Links</string>
     <string name="update_profile">Update Profle</string>
     <string name="employee_code">em_name</string>
+    <string name="em_1">Emergency Contact 1</string>
+    <string name="emergency_contact_2">Emergency Contact 2</string>
 </resources>

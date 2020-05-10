@@ -61,12 +61,15 @@ public class SOS extends AppCompatActivity {
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
                 assert documentSnapshot != null;
                 phone.setText(documentSnapshot.getString("Em_Phone"));
-                name.setText(documentSnapshot.getString("Em_Name"));
-                email.setText(documentSnapshot.getString("Em_Email"));
 
                 final GlobalClass globalVariable = (GlobalClass)getApplicationContext();
                 final double Latitude = globalVariable.getLat();
                 final double Longitude = globalVariable.getLng();
+                globalVariable.setEm_1(phone);
+
+
+                name.setText(documentSnapshot.getString("Em_Name"));
+                email.setText(documentSnapshot.getString("Em_Email"));
 
                 String Longi = Double.toString(Longitude);
                 String Lati = Double.toString(Latitude);

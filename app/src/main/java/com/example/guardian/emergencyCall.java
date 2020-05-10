@@ -7,15 +7,17 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class emergencyCall extends AppCompatActivity {
     ImageView top_logo;
-    CardView Senior, Women, Traffic, Auto, Commissioner, Tourist;
+    CardView Senior, Women, Traffic, Auto, Commissioner, Tourist, Emer_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency_call);
+
         top_logo = findViewById(R.id.logo_top);
         Senior = findViewById(R.id.cardView_call_senior);
         Women = findViewById(R.id.cardView_call_women);
@@ -23,11 +25,24 @@ public class emergencyCall extends AppCompatActivity {
         Auto = findViewById(R.id.cardView_call_auto);
         Commissioner = findViewById(R.id.cardView_call_commissioner);
         Tourist = findViewById(R.id.cardView_call_tourist);
+        Emer_1 = findViewById(R.id.cardView_call_em_1);
+
         top_logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(emergencyCall.this, Home.class);
                 startActivity(intent);
+            }
+        });
+
+        Emer_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final GlobalClass globalVariable = (GlobalClass)getApplicationContext();
+                final TextView em_ph_1 = globalVariable.getEm_1();
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse(String.valueOf(em_ph_1)));
+                startActivity(callIntent);
             }
         });
         Senior.setOnClickListener(new View.OnClickListener() {
