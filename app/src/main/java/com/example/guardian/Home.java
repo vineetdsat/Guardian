@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,6 +46,7 @@ public class Home extends AppCompatActivity {
         Profile = findViewById(R.id.cardView_profile);
         Logout = findViewById(R.id.bt_logout);
         top = findViewById(R.id.logo_top);
+
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         fetchLastLocation();
 
@@ -59,8 +61,16 @@ public class Home extends AppCompatActivity {
         Map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Home.this, MapActivity.class);
-                startActivity(intent);
+
+                final GlobalClass globalVariable = (GlobalClass)getApplicationContext();
+                final double Latitude = globalVariable.getLat();
+                final double Longitude = globalVariable.getLng();
+                String Longi = Double.toString(Longitude);
+                String Lati = Double.toString(Latitude);
+                String URL_1 = "https://www.google.com/maps/search/police+station/@"+ Lati + "," + Longi + ",12z/data=!3m1!4b1";
+
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_1));
+                startActivity(browserIntent);
             }
         });
         Call.setOnClickListener(new View.OnClickListener() {
