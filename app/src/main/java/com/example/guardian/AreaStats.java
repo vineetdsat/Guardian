@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Calendar;
+
 public class AreaStats extends AppCompatActivity {
-    TextView address_pin, address_loc;
+    TextView address_pin, address_loc,time;
     ImageView graph, logo_top;
 
     @Override
@@ -21,6 +23,8 @@ public class AreaStats extends AppCompatActivity {
         address_loc = findViewById(R.id.address_loc);
         graph = findViewById(R.id.graph);
         logo_top = findViewById(R.id.logo_top);
+        time = findViewById(R.id.get_time);
+
         logo_top.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,6 +38,10 @@ public class AreaStats extends AppCompatActivity {
         address_loc.setText(globalVariable.getAdd_loc());
         String PIN = address_pin.getText().toString().trim();
         int pin = Integer.parseInt(PIN);
+
+        Calendar rightNow = Calendar.getInstance();
+        int currentHourIn24Format = rightNow.get(Calendar.HOUR_OF_DAY);
+        time.setText(currentHourIn24Format);
 
 
 

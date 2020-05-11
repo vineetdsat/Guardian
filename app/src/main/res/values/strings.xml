@@ -54,4 +54,5 @@
     <string name="emergency_contact_2">Emergency Contact 2</string>
     <string name="address">Your Location</string>
     <string name="graph_crime">graph_crime</string>
+    <string name="time">Time</string>
 </resources>

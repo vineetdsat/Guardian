@@ -40,8 +40,16 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:textSize="12sp"
-        android:id="@+id/address_pin"
-        android:layout_marginTop="5dp"/>
+        android:id="@+id/address_pin"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/get_time"
+        android:textSize="25sp"
+        android:hint="@string/time"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
 
     <ImageView
         android:id="@+id/graph"
