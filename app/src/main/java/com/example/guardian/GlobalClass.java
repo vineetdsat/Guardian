@@ -1,18 +1,24 @@
 package com.example.guardian;
 
 import android.app.Application;
-import android.widget.TextView;
 
 public class GlobalClass extends Application {
     private double Lat;
     private double Lng;
-    private TextView em_1;
+    private StringBuilder add_pin;
+    private StringBuilder add_loc;
 
-    public TextView getEm_1(){
-        return em_1;
+    public StringBuilder getAdd_loc() {
+        return add_loc;
     }
-    public void setEm_1(TextView em_11){
-        em_1 = em_11;
+    public void setAdd_loc(StringBuilder Add){
+        add_loc = Add;
+    }
+    public StringBuilder getAdd_pin(){
+        return add_pin;
+    }
+    public void setAdd_pin(StringBuilder Loc){
+        add_pin = Loc;
     }
 
     public double getLat() {

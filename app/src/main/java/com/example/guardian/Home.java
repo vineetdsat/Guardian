@@ -4,12 +4,16 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,9 +27,14 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 
 public class Home extends AppCompatActivity {
     ImageView top;
+    TextView loc;
     Button Logout;
     CardView Map,Sos,Area,Call,Profile;
 
@@ -46,6 +55,7 @@ public class Home extends AppCompatActivity {
         Profile = findViewById(R.id.cardView_profile);
         Logout = findViewById(R.id.bt_logout);
         top = findViewById(R.id.logo_top);
+        loc = findViewById(R.id.location_address_tv);
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         fetchLastLocation();
@@ -62,11 +72,8 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                final GlobalClass globalVariable = (GlobalClass)getApplicationContext();
-                final double Latitude = globalVariable.getLat();
-                final double Longitude = globalVariable.getLng();
-                String Longi = Double.toString(Longitude);
-                String Lati = Double.toString(Latitude);
+                String Lati = Double.toString(currentLocation.getLatitude());
+                String Longi = Double.toString(currentLocation.getLongitude());
                 String URL_1 = "https://www.google.com/maps/search/police+station/@"+ Lati + "," + Longi + ",12z/data=!3m1!4b1";
 
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_1));
@@ -84,6 +91,13 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, Profile.class);
+                startActivity(intent);
+            }
+        });
+        Area.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, AreaStats.class);
                 startActivity(intent);
             }
         });
@@ -117,13 +131,43 @@ public class Home extends AppCompatActivity {
                     currentLocation = location;
                     Toast.makeText(getApplicationContext(),currentLocation.getLatitude()
                             +""+currentLocation.getLongitude(),Toast.LENGTH_SHORT).show();
+                    double latitude = currentLocation.getLatitude();
+                    double longitude = currentLocation.getLongitude();
+                    loc.setText(getAddress(latitude, longitude));
 
                     final GlobalClass globalVariable =(GlobalClass)getApplicationContext();
-                    globalVariable.setLat(currentLocation.getLatitude());
-                    globalVariable.setLng(currentLocation.getLongitude());
+                    globalVariable.setLat(latitude);
+                    globalVariable.setLng(longitude);
+
+
                 }
             }
         });
+
+    }
+    private String getAddress(double latitude, double longitude) {
+        StringBuilder result_1 = new StringBuilder();
+        StringBuilder result_2 = new StringBuilder();
+        try {
+            Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+            List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
+            if (addresses.size() > 0) {
+                Address address = addresses.get(0);
+                result_1.append(address.getPostalCode());
+                result_2.append(address.getSubLocality());
+                final GlobalClass globalVariable =(GlobalClass)getApplicationContext();
+                globalVariable.setAdd_pin(result_1);
+                globalVariable.setAdd_loc(result_2);
+
+            }
+        } catch (IOException e) {
+            Log.e("tag", e.getMessage());
+        }
+
+        return result_1.toString();
+
+
+
     }
 
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

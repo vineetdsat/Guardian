@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ import java.util.Objects;
 
 public class Profile extends AppCompatActivity {
     static final String TAG = "YOUR-TAG-NAME";
+    ImageView logo_top;
     EditText Name,em_Name,Email,Phone,em_Email,em_Phone;
     Button Update;
     TextView Top;
@@ -39,6 +41,7 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_profile);
+        logo_top = findViewById(R.id.logo_top);
         Name = findViewById(R.id.update_name);
         em_Name = findViewById(R.id.update_em_name);
         em_Email = findViewById(R.id.update_em_email);
@@ -95,6 +98,13 @@ public class Profile extends AppCompatActivity {
                     }
                 });
                 startActivity(new Intent(getApplicationContext(),Home.class));
+            }
+        });
+        logo_top.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Profile.this, Home.class);
+                startActivity(intent);
             }
         });
     }

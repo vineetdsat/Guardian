@@ -35,16 +35,6 @@ public class emergencyCall extends AppCompatActivity {
             }
         });
 
-        Emer_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final GlobalClass globalVariable = (GlobalClass)getApplicationContext();
-                final TextView em_ph_1 = globalVariable.getEm_1();
-                Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse(String.valueOf(em_ph_1)));
-                startActivity(callIntent);
-            }
-        });
         Senior.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
