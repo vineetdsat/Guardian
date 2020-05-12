@@ -89,7 +89,9 @@ public class SOS extends AppCompatActivity {
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final GlobalClass globalVariable =(GlobalClass)getApplicationContext();
                 String em_number =  phone.getText().toString().trim();
+                globalVariable.setEm_1(em_number);
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:" + em_number));
                 startActivity(intent);

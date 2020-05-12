@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class emergencyCall extends AppCompatActivity {
     ImageView top_logo;
-    CardView Senior, Women, Traffic, Auto, Commissioner, Tourist, Emer_1;
+    CardView Senior, Women, Traffic, Auto, Commissioner, Tourist, Eme_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +25,23 @@ public class emergencyCall extends AppCompatActivity {
         Auto = findViewById(R.id.cardView_call_auto);
         Commissioner = findViewById(R.id.cardView_call_commissioner);
         Tourist = findViewById(R.id.cardView_call_tourist);
-        Emer_1 = findViewById(R.id.cardView_call_em_1);
+        Eme_1 = findViewById(R.id.cardView_call_em_1);
 
         top_logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(emergencyCall.this, Home.class);
                 startActivity(intent);
+            }
+        });
+        Eme_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                final GlobalClass globalVariable =(GlobalClass)getApplicationContext();
+                String em1_phone = globalVariable.getEm_1();
+                callIntent.setData(Uri.parse("tel:" + em1_phone));
+                startActivity(callIntent);
             }
         });
 

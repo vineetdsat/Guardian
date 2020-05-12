@@ -7,6 +7,7 @@ public class GlobalClass extends Application {
     private double Lng;
     private StringBuilder add_pin;
     private StringBuilder add_loc;
+    private String em_1;
 
     public StringBuilder getAdd_loc() {
         return add_loc;
@@ -38,4 +39,10 @@ public class GlobalClass extends Application {
 
     }
 
+    public void setEm_1(String EM_1) {
+        em_1 = EM_1;
+    }
+    public  String getEm_1(){
+        return em_1;
+    }
 }
