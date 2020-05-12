@@ -443,10 +443,12 @@ public class AreaStats extends AppCompatActivity {
         address_pin.setText(globalVariable.getAdd_pin());
         address_loc.setText(globalVariable.getAdd_loc());
 
-        String PIN = address_pin.getText().toString().trim();
+         //To add Checking based on the Postal code of the area
+        //String PIN = address_pin.getText().toString().trim();
+        // int pin = Integer.parseInt(PIN);
+
         String Location = address_loc.getText().toString().trim();
 
-       // int pin = Integer.parseInt(PIN);
 
 
         Calendar rightNow = Calendar.getInstance();
@@ -457,7 +459,7 @@ public class AreaStats extends AppCompatActivity {
         try
         {int i=0;
             switch (Location) {
-                case "Banshankari":
+                case "Banashankari":
                     i = 0;
                     break;
                 case "Basavangudi":
@@ -576,14 +578,54 @@ public class AreaStats extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        if(Location.equals("Banshankari")){
-            graph.setBackgroundResource(R.drawable.graph_1);
-        }
-        else if(Location.equals("Basavangudi")){
-            graph.setBackgroundResource(R.drawable.graph_2);
-        }
-        else if(Location.equals("C.K. Achuktu")){
-            graph.setBackgroundResource(R.drawable.graph_3);
+        switch (Location) {
+            case "Banshankari":
+                graph.setBackgroundResource(R.drawable.graph_1);
+                break;
+            case "Basavangudi":
+                graph.setBackgroundResource(R.drawable.graph_2);
+                break;
+            case "C.K. Achuktu":
+                graph.setBackgroundResource(R.drawable.graph_3);
+                break;
+            case "Girinagar":
+                graph.setBackgroundResource(R.drawable.graph_3);
+                break;
+            case "J. P. Nagar":
+                graph.setBackgroundResource(R.drawable.graph_3);
+                break;
+            case "Jayanagar":
+                graph.setBackgroundResource(R.drawable.graph_3);
+                break;
+            case "k g nagar":
+                graph.setBackgroundResource(R.drawable.graph_3);
+                break;
+            case "K S Layout":
+                graph.setBackgroundResource(R.drawable.graph_3);
+                break;
+            case "Konanakunte":
+                graph.setBackgroundResource(R.drawable.graph_3);
+                break;
+            case "Puttenahalli":
+                graph.setBackgroundResource(R.drawable.graph_3);
+                break;
+            case "Shankarapura":
+                graph.setBackgroundResource(R.drawable.graph_3);
+                break;
+            case "Siddapura":
+                graph.setBackgroundResource(R.drawable.graph_3);
+                break;
+            case "Subramanyapura":
+                graph.setBackgroundResource(R.drawable.graph_3);
+                break;
+            case "Talaghattapura":
+                graph.setBackgroundResource(R.drawable.graph_3);
+                break;
+            case "VV Puram":
+                graph.setBackgroundResource(R.drawable.graph_3);
+                break;
+            default:graph.setVisibility(View.INVISIBLE);
+
         }
 
     }
