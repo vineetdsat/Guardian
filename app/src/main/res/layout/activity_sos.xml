@@ -75,4 +75,16 @@
         android:text="@string/send_emergency_message"
         android:textColor="@color/colorPrimary" />
 
+    <Button
+        android:id="@+id/bt_em_call"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/call_emergency_number"
+        android:textColor="@color/colorPrimary" />
+
+
+
 </LinearLayout>

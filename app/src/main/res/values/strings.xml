@@ -58,6 +58,7 @@
     <string name="kidnap_msg_1">The Rate Of Kidnapping Is </string>
     <string name="theft_msg_1">The Rate Of Thefts and Robery Is </string>
     <string name="msg_2"> In This Area</string>
+    <string name="call_emergency_number">Call Emergency Number</string>
 
 
 </resources>

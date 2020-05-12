@@ -3,6 +3,7 @@ package com.example.guardian;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -12,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -29,13 +29,13 @@ public class SOS extends AppCompatActivity {
 
     ImageView logo_top;
     TextView name, email,phone;
-    Button sos;
+    Button sos, call;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
     TextView textMessage;
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -48,6 +48,7 @@ public class SOS extends AppCompatActivity {
         email = findViewById(R.id.tv_disp_email);
         phone = findViewById(R.id.tv_disp_phone);
         sos = findViewById(R.id.bt_sos);
+        call = findViewById(R.id.bt_em_call);
         textMessage = findViewById(R.id.text_msg);
 
         fAuth = FirebaseAuth.getInstance();
@@ -81,6 +82,16 @@ public class SOS extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SOS.this, Home.class);
+                startActivity(intent);
+
+            }
+        });
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String em_number =  phone.getText().toString().trim();
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + em_number));
                 startActivity(intent);
             }
         });
