@@ -522,9 +522,9 @@ public class AreaStats extends AppCompatActivity {
                     String kidnap = jsonObject1.getString("Kidnap Predection");
                     String theft = jsonObject1.getString("Theft Predection");
 
-                    assaultPrediction.setText(String.format("%s%s%s", getString(R.string.assault_msg_1), assault, getString(R.string.msg_2)));
-                    kidnapPrediction.setText(String.format("%s%s%s", getString(R.string.kidnap_msg_1), kidnap, getString(R.string.msg_2)));
-                    theftPrediction.setText(String.format("%s%s%s", getString(R.string.theft_msg_1), theft, getString(R.string.msg_2)));
+                    assaultPrediction.setText(String.format("%s %s %s", getString(R.string.assault_msg_1), assault, getString(R.string.msg_2)));
+                    kidnapPrediction.setText(String.format("%s %s %s", getString(R.string.kidnap_msg_1), kidnap, getString(R.string.msg_2)));
+                    theftPrediction.setText(String.format("%s %s %s", getString(R.string.theft_msg_1), theft, getString(R.string.msg_2)));
 
             }
             else if(currentHourIn24Format>=12 && currentHourIn24Format<17){
@@ -537,9 +537,9 @@ public class AreaStats extends AppCompatActivity {
                     String kidnap = jsonObject1.getString("Kidnap Predection");
                     String theft = jsonObject1.getString("Theft Predection");
 
-                    assaultPrediction.setText(String.format("%s%s%s", getString(R.string.assault_msg_1), assault, getString(R.string.msg_2)));
-                    kidnapPrediction.setText(String.format("%s%s%s", getString(R.string.kidnap_msg_1), kidnap, getString(R.string.msg_2)));
-                    theftPrediction.setText(String.format("%s%s%s", getString(R.string.theft_msg_1), theft, getString(R.string.msg_2)));
+                    assaultPrediction.setText(String.format("%s %s %s", getString(R.string.assault_msg_1), assault, getString(R.string.msg_2)));
+                    kidnapPrediction.setText(String.format("%s %s %s", getString(R.string.kidnap_msg_1), kidnap, getString(R.string.msg_2)));
+                    theftPrediction.setText(String.format("%s %s %s", getString(R.string.theft_msg_1), theft, getString(R.string.msg_2)));
 
 
             }
@@ -553,9 +553,9 @@ public class AreaStats extends AppCompatActivity {
                     String kidnap = jsonObject1.getString("Kidnap Predection");
                     String theft = jsonObject1.getString("Theft Predection");
 
-                    assaultPrediction.setText(String.format("%s%s%s", getString(R.string.assault_msg_1), assault, getString(R.string.msg_2)));
-                    kidnapPrediction.setText(String.format("%s%s%s", getString(R.string.kidnap_msg_1), kidnap, getString(R.string.msg_2)));
-                    theftPrediction.setText(String.format("%s%s%s", getString(R.string.theft_msg_1), theft, getString(R.string.msg_2)));
+                    assaultPrediction.setText(String.format("%s %s %s", getString(R.string.assault_msg_1), assault, getString(R.string.msg_2)));
+                    kidnapPrediction.setText(String.format("%s %s %s", getString(R.string.kidnap_msg_1), kidnap, getString(R.string.msg_2)));
+                    theftPrediction.setText(String.format("%s %s %s", getString(R.string.theft_msg_1), theft, getString(R.string.msg_2)));
 
 
             }
@@ -569,9 +569,9 @@ public class AreaStats extends AppCompatActivity {
                     String kidnap = jsonObject1.getString("Kidnap Predection");
                     String theft = jsonObject1.getString("Theft Predection");
 
-                    assaultPrediction.setText(String.format("%s%s%s", getString(R.string.assault_msg_1), assault, getString(R.string.msg_2)));
-                    kidnapPrediction.setText(String.format("%s%s%s", getString(R.string.kidnap_msg_1), kidnap, getString(R.string.msg_2)));
-                    theftPrediction.setText(String.format("%s%s%s", getString(R.string.theft_msg_1), theft, getString(R.string.msg_2)));
+                    assaultPrediction.setText(String.format("%s %s %s", getString(R.string.assault_msg_1), assault, getString(R.string.msg_2)));
+                    kidnapPrediction.setText(String.format("%s %s %s", getString(R.string.kidnap_msg_1), kidnap, getString(R.string.msg_2)));
+                    theftPrediction.setText(String.format("%s %s %s", getString(R.string.theft_msg_1), theft, getString(R.string.msg_2)));
             }
         }
         catch (JSONException e) {
