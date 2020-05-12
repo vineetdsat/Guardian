@@ -15,7 +15,7 @@ import org.json.JSONObject;
 import java.util.Calendar;
 
 public class AreaStats extends AppCompatActivity {
-    TextView address_pin, address_loc,time, text_1, text_2, text_3,text_4;
+    TextView address_pin, address_loc,  assaultPrediction, kidnapPrediction, theftPrediction;
     ImageView graph, logo_top;
    String Morning_Prediction_data = "{\n" +
            "  \"Prediction\": [\n" +
@@ -427,11 +427,10 @@ public class AreaStats extends AppCompatActivity {
         address_loc = findViewById(R.id.address_loc);
         graph = findViewById(R.id.graph);
         logo_top = findViewById(R.id.logo_top);
-        time = findViewById(R.id.get_time);
-        text_1 = findViewById(R.id.tv_1);
-        text_2 = findViewById(R.id.tv_2);
-        text_3 = findViewById(R.id.tv_3);
-        text_4 = findViewById(R.id.tv_4);
+
+        assaultPrediction = findViewById(R.id.assault_pre);
+        kidnapPrediction = findViewById(R.id.kidnaping_pre);
+        theftPrediction = findViewById(R.id.theft_pre);
 
         logo_top.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -447,7 +446,7 @@ public class AreaStats extends AppCompatActivity {
         String PIN = address_pin.getText().toString().trim();
         String Location = address_loc.getText().toString().trim();
 
-        int pin = Integer.parseInt(PIN);
+       // int pin = Integer.parseInt(PIN);
 
 
         Calendar rightNow = Calendar.getInstance();
@@ -473,7 +472,7 @@ public class AreaStats extends AppCompatActivity {
                 case "Hanumantha Nagar PS":
                     i = 4;
                     break;
-                case "J P NAGAR":
+                case "J. P. Nagar":
                     i = 5;
                     break;
                 case "Jayanagar":
@@ -500,7 +499,7 @@ public class AreaStats extends AppCompatActivity {
                 case "Subramanyapura":
                     i = 13;
                     break;
-                case "Thalaghtapura":
+                case "Talaghattapura":
                     i = 14;
                     break;
                 case "VV Puram":
@@ -520,10 +519,10 @@ public class AreaStats extends AppCompatActivity {
                     String assault = jsonObject1.getString("Assault Predection");
                     String kidnap = jsonObject1.getString("Kidnap Predection");
                     String theft = jsonObject1.getString("Theft Predection");
-                    text_1.setText(place);
-                    text_2.setText(assault);
-                    text_3.setText(kidnap);
-                    text_4.setText(theft);
+
+                    assaultPrediction.setText(String.format("%s%s%s", getString(R.string.assault_msg_1), assault, getString(R.string.msg_2)));
+                    kidnapPrediction.setText(String.format("%s%s%s", getString(R.string.kidnap_msg_1), kidnap, getString(R.string.msg_2)));
+                    theftPrediction.setText(String.format("%s%s%s", getString(R.string.theft_msg_1), theft, getString(R.string.msg_2)));
 
             }
             else if(currentHourIn24Format>=12 && currentHourIn24Format<17){
@@ -535,10 +534,10 @@ public class AreaStats extends AppCompatActivity {
                     String assault = jsonObject1.getString("Assault Predection");
                     String kidnap = jsonObject1.getString("Kidnap Predection");
                     String theft = jsonObject1.getString("Theft Predection");
-                    text_1.setText(place);
-                    text_2.setText(assault);
-                    text_3.setText(kidnap);
-                    text_4.setText(theft);
+
+                    assaultPrediction.setText(String.format("%s%s%s", getString(R.string.assault_msg_1), assault, getString(R.string.msg_2)));
+                    kidnapPrediction.setText(String.format("%s%s%s", getString(R.string.kidnap_msg_1), kidnap, getString(R.string.msg_2)));
+                    theftPrediction.setText(String.format("%s%s%s", getString(R.string.theft_msg_1), theft, getString(R.string.msg_2)));
 
 
             }
@@ -551,10 +550,10 @@ public class AreaStats extends AppCompatActivity {
                     String assault = jsonObject1.getString("Assault Predection");
                     String kidnap = jsonObject1.getString("Kidnap Predection");
                     String theft = jsonObject1.getString("Theft Predection");
-                    text_1.setText(place);
-                    text_2.setText(assault);
-                    text_3.setText(kidnap);
-                    text_4.setText(theft);
+
+                    assaultPrediction.setText(String.format("%s%s%s", getString(R.string.assault_msg_1), assault, getString(R.string.msg_2)));
+                    kidnapPrediction.setText(String.format("%s%s%s", getString(R.string.kidnap_msg_1), kidnap, getString(R.string.msg_2)));
+                    theftPrediction.setText(String.format("%s%s%s", getString(R.string.theft_msg_1), theft, getString(R.string.msg_2)));
 
 
             }
@@ -567,23 +566,25 @@ public class AreaStats extends AppCompatActivity {
                     String assault = jsonObject1.getString("Assault Predection");
                     String kidnap = jsonObject1.getString("Kidnap Predection");
                     String theft = jsonObject1.getString("Theft Predection");
-                    text_1.setText(place);
-                    text_2.setText(assault);
-                    text_3.setText(kidnap);
-                    text_4.setText(theft);
 
+                    assaultPrediction.setText(String.format("%s%s%s", getString(R.string.assault_msg_1), assault, getString(R.string.msg_2)));
+                    kidnapPrediction.setText(String.format("%s%s%s", getString(R.string.kidnap_msg_1), kidnap, getString(R.string.msg_2)));
+                    theftPrediction.setText(String.format("%s%s%s", getString(R.string.theft_msg_1), theft, getString(R.string.msg_2)));
             }
         }
         catch (JSONException e) {
             e.printStackTrace();
         }
 
-        if(pin == 560070 || pin== 560085){
+        if(Location.equals("Banshankari")){
             graph.setBackgroundResource(R.drawable.graph_1);
         }
-        else
+        else if(Location.equals("Basavangudi")){
             graph.setBackgroundResource(R.drawable.graph_2);
+        }
+        else if(Location.equals("C.K. Achuktu")){
+            graph.setBackgroundResource(R.drawable.graph_3);
+        }
 
     }
-
 }

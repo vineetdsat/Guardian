@@ -54,5 +54,10 @@
     <string name="emergency_contact_2">Emergency Contact 2</string>
     <string name="address">Your Location</string>
     <string name="graph_crime">graph_crime</string>
-    <string name="time">Time</string>
+    <string name="assault_msg_1">The Rate Of Assault Is </string>
+    <string name="kidnap_msg_1">The Rate Of Kidnapping Is </string>
+    <string name="theft_msg_1">The Rate Of Thefts and Robery Is </string>
+    <string name="msg_2"> In This Area</string>
+
+
 </resources>
