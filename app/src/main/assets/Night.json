@@ -1,0 +1,100 @@
+{
+  "Predection": [
+    {
+      "Place": "Banashankari",
+      "Assault Predection": "Low",
+      "Kidnap Predection": "Low",
+      "Theft Predection": "Low"
+    },
+    {
+      "Place": "Basavangudi",
+      "Assault Predection": "High",
+      "Kidnap Predection": "Low",
+      "Theft Predection": "High"
+    },
+    {
+      "Place": "C.K. Achuktu",
+      "Assault Predection": "High",
+      "Kidnap Predection": "High",
+      "Theft Predection": "High"
+    },
+    {
+      "Place": "GIRINAGAR PS",
+      "Assault Predection": "High",
+      "Kidnap Predection": "High",
+      "Theft Predection": "Low"
+    },
+    {
+      "Place": "Hanumantha Nagar PS",
+      "Assault Predection": "Low",
+      "Kidnap Predection": "High",
+      "Theft Predection": "High"
+    },
+    {
+      "Place": "J P NAGAR",
+      "Assault Predection": "High",
+      "Kidnap Predection": "High",
+      "Theft Predection": "High"
+    },
+    {
+      "Place": "Jayanagar",
+      "Assault Predection": "Low",
+      "Kidnap Predection": "High",
+      "Theft Predection": "High"
+    },
+    {
+      "Place": "k g nagar",
+      "Assault Predection": "Low",
+      "Kidnap Predection": "Low",
+      "Theft Predection": "Low"
+    },
+    {
+      "Place": "K S Layout",
+      "Assault Predection": "Low",
+      "Kidnap Predection": "High",
+      "Theft Predection": "High"
+    },
+    {
+      "Place": "Konanakunte",
+      "Assault Predection": "High",
+      "Kidnap Predection": "Low",
+      "Theft Predection": "High"
+    },
+    {
+      "Place": "Puttenahalli",
+      "Assault Predection": "High",
+      "Kidnap Predection": "High",
+      "Theft Predection": "Low"
+    },
+    {
+      "Place": "Shankarapura",
+      "Assault Predection": "Low",
+      "Kidnap Predection": "Low",
+      "Theft Predection": "Low"
+    },
+    {
+      "Place": "Siddapura",
+      "Assault Predection": "Low",
+      "Kidnap Predection": "Low",
+      "Theft Predection": "Low"
+    },
+    {
+      "Place": "Subramanyapura",
+      "Assault Predection": "High",
+      "Kidnap Predection": "High",
+      "Theft Predection": "Low"
+    },
+    {
+      "Place": "Thalaghtapura",
+      "Assault Predection": "High",
+      "Kidnap Predection": "Low",
+      "Theft Predection": "Low"
+    },
+    {
+      "Place": "VV Puram",
+      "Assault Predection": "Low",
+      "Kidnap Predection": "Low",
+      "Theft Predection": "High"
+    }
+  ]
+}
