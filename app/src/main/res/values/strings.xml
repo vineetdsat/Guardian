@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Guardian:Safety</string>
+    <string name="app_name">Guardian</string>
     <string name="welcome_to">Welcome To</string>
     <string name="app_name_main">app_name_main</string>
     <string name="email">Email</string>
@@ -57,7 +57,7 @@
     <string name="assault_msg_1">The Rate Of Assault Is </string>
     <string name="kidnap_msg_1">The Rate Of Kidnapping Is </string>
     <string name="theft_msg_1">The Rate Of Thefts and Robery Is </string>
-    <string name="msg_2"> In This Area</string>
+    <string name="msg_2"> In This Area, at The Current Time!</string>
     <string name="call_emergency_number">Call Emergency Number</string>
 
 

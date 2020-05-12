@@ -517,7 +517,6 @@ public class AreaStats extends AppCompatActivity {
                 JSONArray jsonArray = jsonObject.getJSONArray("Prediction");
 
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                    String place = jsonObject1.getString("Place");
                     String assault = jsonObject1.getString("Assault Predection");
                     String kidnap = jsonObject1.getString("Kidnap Predection");
                     String theft = jsonObject1.getString("Theft Predection");
@@ -532,7 +531,6 @@ public class AreaStats extends AppCompatActivity {
                 JSONArray jsonArray = jsonObject.getJSONArray("Prediction");
 
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                    String place = jsonObject1.getString("Place");
                     String assault = jsonObject1.getString("Assault Predection");
                     String kidnap = jsonObject1.getString("Kidnap Predection");
                     String theft = jsonObject1.getString("Theft Predection");
@@ -548,7 +546,6 @@ public class AreaStats extends AppCompatActivity {
                 JSONArray jsonArray = jsonObject.getJSONArray("Prediction");
 
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                    String place = jsonObject1.getString("Place");
                     String assault = jsonObject1.getString("Assault Predection");
                     String kidnap = jsonObject1.getString("Kidnap Predection");
                     String theft = jsonObject1.getString("Theft Predection");
@@ -564,7 +561,6 @@ public class AreaStats extends AppCompatActivity {
                 JSONArray jsonArray = jsonObject.getJSONArray("Prediction");
 
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                    String place = jsonObject1.getString("Place");
                     String assault = jsonObject1.getString("Assault Predection");
                     String kidnap = jsonObject1.getString("Kidnap Predection");
                     String theft = jsonObject1.getString("Theft Predection");
@@ -580,49 +576,52 @@ public class AreaStats extends AppCompatActivity {
 
         switch (Location) {
             case "Banshankari":
-                graph.setBackgroundResource(R.drawable.graph_1);
+                graph.setBackgroundResource(R.drawable.bsk_grapk);
                 break;
             case "Basavangudi":
-                graph.setBackgroundResource(R.drawable.graph_2);
+                graph.setBackgroundResource(R.drawable.basva_graph);
                 break;
             case "C.K. Achuktu":
-                graph.setBackgroundResource(R.drawable.graph_3);
+                graph.setBackgroundResource(R.drawable.ck_ghraph);
                 break;
             case "Girinagar":
-                graph.setBackgroundResource(R.drawable.graph_3);
+                graph.setBackgroundResource(R.drawable.giri_graph);
+                break;
+            case "Hanumantha Nagar":
+                graph.setBackgroundResource(R.drawable.hanuman_graph);
                 break;
             case "J. P. Nagar":
-                graph.setBackgroundResource(R.drawable.graph_3);
+                graph.setBackgroundResource(R.drawable.jp_graph);
                 break;
             case "Jayanagar":
-                graph.setBackgroundResource(R.drawable.graph_3);
+                graph.setBackgroundResource(R.drawable.jaya_graph);
                 break;
             case "k g nagar":
-                graph.setBackgroundResource(R.drawable.graph_3);
+                graph.setBackgroundResource(R.drawable.kgn_graph);
                 break;
             case "K S Layout":
-                graph.setBackgroundResource(R.drawable.graph_3);
+                graph.setBackgroundResource(R.drawable.ks_graph);
                 break;
             case "Konanakunte":
-                graph.setBackgroundResource(R.drawable.graph_3);
+                graph.setBackgroundResource(R.drawable.kk_graph);
                 break;
             case "Puttenahalli":
-                graph.setBackgroundResource(R.drawable.graph_3);
+                graph.setBackgroundResource(R.drawable.pth_graph);
                 break;
             case "Shankarapura":
-                graph.setBackgroundResource(R.drawable.graph_3);
+                graph.setBackgroundResource(R.drawable.skp_graph);
                 break;
             case "Siddapura":
-                graph.setBackgroundResource(R.drawable.graph_3);
+                graph.setBackgroundResource(R.drawable.sidd_graph);
                 break;
             case "Subramanyapura":
-                graph.setBackgroundResource(R.drawable.graph_3);
+                graph.setBackgroundResource(R.drawable.sub_graph);
                 break;
             case "Talaghattapura":
-                graph.setBackgroundResource(R.drawable.graph_3);
+                graph.setBackgroundResource(R.drawable.tlght_graph);
                 break;
             case "VV Puram":
-                graph.setBackgroundResource(R.drawable.graph_3);
+                graph.setBackgroundResource(R.drawable.vvp_graph);
                 break;
             default:graph.setVisibility(View.INVISIBLE);
 

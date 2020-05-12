@@ -16,6 +16,7 @@
             android:layout_width="417dp"
             android:layout_height="58dp"
             android:contentDescription="@string/top_img"
+            android:layout_marginTop="10dp"
             android:src="@drawable/logo_top" />
         <LinearLayout
             android:layout_width="wrap_content"
@@ -59,29 +60,50 @@
             android:textSize="12sp"
             android:id="@+id/address_pin"/>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/assault_msg_1"
             android:id="@+id/assault_pre"
             android:layout_marginTop="10dp"
-            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
             android:textSize="25sp"/>
-        <TextView
+        <View
             android:layout_width="wrap_content"
+            android:layout_height="3dp"
+            android:background="#0000A0"/>
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/kidnap_msg_1"
             android:textSize="25sp"
             android:layout_marginTop="10dp"
-            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
             android:id="@+id/kidnaping_pre"/>
-        <TextView
+        <View
             android:layout_width="wrap_content"
+            android:layout_height="3dp"
+            android:background="#0000A0"/>
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginEnd="5dp"
             android:hint="@string/theft_msg_1"
             android:textSize="25sp"
             android:id="@+id/theft_pre"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="3dp"
+            android:background="#0000A0"/>
 
         <ImageView
             android:id="@+id/graph"
