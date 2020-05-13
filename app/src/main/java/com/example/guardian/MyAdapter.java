@@ -1,7 +1,8 @@
 package com.example.guardian;
 
 
-import android.content.Context;
+import androidx.annotation.NonNull;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,21 +11,18 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<List_Data>list_data;
-    private Context context;
 
-    public MyAdapter(List<List_Data> list_data, Context context) {
+    MyAdapter(List<List_Data> list_data) {
         this.list_data = list_data;
-        this.context = context;
     }
 
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.data_list,parent,false);

@@ -34,7 +34,7 @@ public class News extends AppCompatActivity {
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
         list_data= new ArrayList<>();
-        adapter=new MyAdapter(list_data,this);
+        adapter=new MyAdapter(list_data);
 
         getData();
 

@@ -36,7 +36,7 @@ public class Home extends AppCompatActivity {
     ImageView top;
     TextView loc;
     Button Logout;
-    CardView Map,Sos,Area,Call,Profile;
+    CardView Map,Sos,Area,Call,Profile,News;
 
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
@@ -56,6 +56,7 @@ public class Home extends AppCompatActivity {
         Logout = findViewById(R.id.bt_logout);
         top = findViewById(R.id.logo_top);
         loc = findViewById(R.id.location_address_tv);
+        News = findViewById(R.id.cardView_news);
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         fetchLastLocation();
@@ -98,6 +99,13 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, AreaStats.class);
+                startActivity(intent);
+            }
+        });
+        News.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, News.class);
                 startActivity(intent);
             }
         });
