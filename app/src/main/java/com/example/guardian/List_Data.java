@@ -1,19 +1,30 @@
 package com.example.guardian;
 
 public class List_Data {
-    private String name;
-    private String image_url;
+    private String headline;
+    private String link;
 
-    List_Data(String name, String image_url) {
-        this.name = name;
-        this.image_url = image_url;
+
+    public List_Data(){}
+    public List_Data(String headline, String link){
+        this.headline = headline;
+        this.link = link;
     }
 
-    public String getName() {
-        return name;
+
+    public String getHeadline() {
+        return headline;
     }
 
-    String getImage_url() {
-        return image_url;
+    public void setHeadline(String headline) {
+        this.headline = headline;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }

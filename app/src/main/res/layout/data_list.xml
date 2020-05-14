@@ -12,22 +12,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="8dp">
-
         <TextView
-            android:id="@+id/image_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="35sp"
-            android:text="@string/link"/>
-
-        <TextView
-            android:id="@+id/text_name"
+            android:id="@+id/text_head"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/news"
             android:textSize="20sp"
             android:textColor="@android:color/background_dark"/>
-
+        <TextView
+            android:id="@+id/text_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:text="@string/link"/>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
