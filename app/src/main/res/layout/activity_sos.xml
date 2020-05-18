@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/back_8"
     android:orientation="vertical"
-    tools:context=".SOS">
+    tools:context=".activities.SOS">
 
     <ImageView
         android:id="@+id/logo_top"

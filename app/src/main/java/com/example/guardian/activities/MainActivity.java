@@ -1,4 +1,4 @@
-package com.example.guardian;
+package com.example.guardian.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.guardian.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

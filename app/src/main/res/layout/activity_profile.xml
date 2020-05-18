@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@drawable/back_8"
     android:layout_height="match_parent"
-    tools:context=".Profile">
+    tools:context=".activities.Profile">
     <ImageView
         android:id="@+id/logo_top"
         android:layout_width="417dp"

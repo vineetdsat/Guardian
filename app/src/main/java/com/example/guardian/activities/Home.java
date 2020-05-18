@@ -1,4 +1,4 @@
-package com.example.guardian;
+package com.example.guardian.activities;
 
 import android.Manifest;
 import android.content.Intent;
@@ -21,6 +21,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 
+import com.example.guardian.model.GlobalClass;
+import com.example.guardian.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -30,6 +32,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 
 public class Home extends AppCompatActivity {
@@ -169,7 +172,7 @@ public class Home extends AppCompatActivity {
 
             }
         } catch (IOException e) {
-            Log.e("tag", e.getMessage());
+            Log.e("tag", Objects.requireNonNull(e.getMessage()));
         }
 
         return result_1.toString();

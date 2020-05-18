@@ -1,4 +1,4 @@
-package com.example.guardian;
+package com.example.guardian.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.guardian.model.GlobalClass;
+import com.example.guardian.R;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -15,8 +18,9 @@ import org.json.JSONObject;
 import java.util.Calendar;
 
 public class AreaStats extends AppCompatActivity {
-    TextView address_pin, address_loc,  assaultPrediction, kidnapPrediction, theftPrediction;
+    TextView address_pin, address_loc,  assaultPrediction, kidnapPrediction, theftPrediction,warning;
     ImageView graph, logo_top;
+    View v1, v2, v3;
    String Morning_Prediction_data = "{\n" +
            "  \"Prediction\": [\n" +
            "    {\n" +
@@ -423,11 +427,15 @@ public class AreaStats extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_area_stats);
 
+        v1 = findViewById(R.id.view_1);
+        v2 = findViewById(R.id.view_2);
+        v3 = findViewById(R.id.view_3);
+
         address_pin = findViewById(R.id.address_pin);
         address_loc = findViewById(R.id.address_loc);
         graph = findViewById(R.id.graph);
         logo_top = findViewById(R.id.logo_top);
-
+        warning = findViewById(R.id.warning);
         assaultPrediction = findViewById(R.id.assault_pre);
         kidnapPrediction = findViewById(R.id.kidnaping_pre);
         theftPrediction = findViewById(R.id.theft_pre);
@@ -454,8 +462,6 @@ public class AreaStats extends AppCompatActivity {
         Calendar rightNow = Calendar.getInstance();
         int currentHourIn24Format = rightNow.get(Calendar.HOUR_OF_DAY);
 
-
-
         try
         {int i=0;
             switch (Location) {
@@ -468,10 +474,10 @@ public class AreaStats extends AppCompatActivity {
                 case "C.K. Achuktu":
                     i = 2;
                     break;
-                case "GIRINAGAR PS":
+                case "GIRINAGAR":
                     i = 3;
                     break;
-                case "Hanumantha Nagar PS":
+                case "Hanumantha Nagar":
                     i = 4;
                     break;
                 case "J. P. Nagar":
@@ -507,9 +513,16 @@ public class AreaStats extends AppCompatActivity {
                 case "VV Puram":
                     i = 15;
                     break;
+                case "null":
+                    assaultPrediction.setVisibility(View.INVISIBLE);
+                    kidnapPrediction.setVisibility(View.INVISIBLE);
+                    theftPrediction.setVisibility(View.INVISIBLE);
+                    warning.setVisibility(View.VISIBLE);
+                    v1.setVisibility(View.INVISIBLE);
+                    v2.setVisibility(View.INVISIBLE);
+                    v3.setVisibility(View.INVISIBLE);
+
             }
-
-
 
             if (currentHourIn24Format >=6 && currentHourIn24Format<12){
                 JSONObject jsonObject = new JSONObject(Morning_Prediction_data);
@@ -575,7 +588,7 @@ public class AreaStats extends AppCompatActivity {
         }
 
         switch (Location) {
-            case "Banshankari":
+            case "Banashankari":
                 graph.setBackgroundResource(R.drawable.bsk_grapk);
                 break;
             case "Basavangudi":

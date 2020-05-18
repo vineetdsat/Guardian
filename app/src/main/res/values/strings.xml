@@ -60,6 +60,8 @@
     <string name="msg_2"> In This Area, at The Current Time!</string>
     <string name="call_emergency_number">Call Emergency Number</string>
     <string name="link">link</string>
+    <string name="warning">Cannot Fetch Current Location Data</string>
+    <string name="crime_news">Crime News</string>
 
 
 </resources>

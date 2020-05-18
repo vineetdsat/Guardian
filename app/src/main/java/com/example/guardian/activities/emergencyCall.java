@@ -1,4 +1,4 @@
-package com.example.guardian;
+package com.example.guardian.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -7,7 +7,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.example.guardian.model.GlobalClass;
+import com.example.guardian.R;
 
 public class emergencyCall extends AppCompatActivity {
     ImageView top_logo;

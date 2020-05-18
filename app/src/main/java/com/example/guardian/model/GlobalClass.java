@@ -1,4 +1,4 @@
-package com.example.guardian;
+package com.example.guardian.model;
 
 import android.app.Application;
 

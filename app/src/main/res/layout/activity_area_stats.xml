@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/back_8"
-    tools:context=".AreaStats">
+    tools:context=".activities.AreaStats">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,6 +60,16 @@
             android:textSize="12sp"
             android:id="@+id/address_pin"/>
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:id="@+id/warning"
+            android:text="@string/warning"
+            android:textSize="20sp"/>
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/assault_msg_1"
@@ -73,7 +83,8 @@
         <View
             android:layout_width="wrap_content"
             android:layout_height="3dp"
-            android:background="#0000A0"/>
+            android:id="@+id/view_1"
+            android:background="#0000A0" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,6 +98,7 @@
             android:id="@+id/kidnaping_pre"/>
         <View
             android:layout_width="wrap_content"
+            android:id="@+id/view_2"
             android:layout_height="3dp"
             android:background="#0000A0"/>
         <TextView
@@ -103,6 +115,7 @@
         <View
             android:layout_width="wrap_content"
             android:layout_height="3dp"
+            android:id="@+id/view_3"
             android:background="#0000A0"/>
 
         <ImageView
